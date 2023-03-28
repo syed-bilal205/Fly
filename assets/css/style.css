@@ -1,0 +1,705 @@
+:root {
+  /* colors */
+
+  --british-racing-green: hsl(144, 45%, 19%);
+  --Green-1: #0b2314;
+  --Green-2: hsl(144, 51%, 15%);
+  --Green-3: #0d2b19;
+  --Green_30: hsla(144, 51%, 15%, 0.3);
+  --morning-blue: hsl(143, 11%, 58%);
+  --satin-sheen-gold: hsl(49, 54%, 43%);
+  --vegas-gold: hsl(48, 40%, 51%);
+  --medium-champagne: hsl(49, 63%, 81%);
+  --baby-powder: hsl(51, 33%, 96%);
+  --light-gray: hsl(0, 0%, 80%);
+  --white_10: hsl(0, 0%, 100%, 0.1);
+  --white: hsl(0, 0%, 100%);
+  --black_50: hsla(0, 0%, 0%, 0.5);
+
+  /* Gradient */
+
+  --gradient-1: linear-gradient(
+    180deg,
+    hsla(137, 40%, 12%, 0) 47%,
+    hsla(137, 40%, 12%, 0.89) 96%
+  );
+  /*Fonts  */
+  --ff-dm-sans: "DM Sans", sans-serif;
+
+  /* custom shadow */
+  --shadow: 0px 10px 60px 0px hsla(0, 0%, 0%, 0.25);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  /* font-size: 62.5%; */
+  scroll-behavior: smooth;
+  font-family: "DM Sans";
+}
+body {
+  font-family: "DM SANS";
+  position: relative;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+/* navbar css start*/
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--Green-2);
+  padding: 1rem 4rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.logo {
+  z-index: 999;
+}
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+.navLinks li {
+  font-size: 1.2rem;
+}
+.navLinks li a {
+  color: var(--white);
+  cursor: pointer;
+}
+.icons {
+  color: var(--white);
+  font-size: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  align-items: center;
+}
+.mobileIcons {
+  color: var(--white);
+  display: none;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.mobileIcons .menuClose {
+  display: none;
+}
+/* Navbar css end */
+
+/* hero css start */
+
+.hero {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  background-color: var(--Green-2);
+  position: relative;
+  z-index: 1;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: fixed;
+  opacity: 0.15;
+  mix-blend-mode: luminosity;
+  z-index: -1;
+}
+.heroContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+.heroContent span {
+  color: var(--white);
+  font-weight: bold;
+}
+.heroContent h1 {
+  color: var(--white);
+  font-size: 6rem;
+  letter-spacing: 5px;
+  text-align: center;
+}
+.heroButtons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  background-color: var(--satin-sheen-gold);
+  transition: 0.5s ease;
+}
+.btn:hover {
+  color: var(--satin-sheen-gold);
+  background-color: var(--white);
+}
+.btn-read {
+  background-color: var(--white);
+  color: var(--black_50);
+  font-weight: bold;
+}
+.btn-read:hover {
+  background-color: var(--satin-sheen-gold);
+  color: var(--Green-1);
+}
+.heroImage {
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 12rem; */
+}
+.heroImage img {
+  position: absolute;
+  bottom: 35%;
+  transform: translate(-50%, 40%);
+  animation: upDown 1s ease-in-out infinite;
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* hero css end */
+
+/* card css start */
+
+.cardMain {
+  width: 100vw;
+  margin-top: 15rem;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  background-color: var(--satin-sheen-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cardInner {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: var(--satin-sheen-gold);
+  border-radius: 5px;
+  padding: 4rem 3rem;
+  box-shadow: var(--shadow);
+  transition: 0.5s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card:hover {
+  background-color: var(--white);
+}
+.card:hover h6 {
+  color: var(--satin-sheen-gold);
+}
+.card ion-icon {
+  color: var(--Green-3);
+  font-size: 2.5rem;
+}
+.card h6 {
+  color: var(--white);
+  font-family: bold;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+/* card css end */
+
+/* Feature Section Css Start */
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 4rem;
+  background-color: var(--Green-2);
+  gap: 2rem;
+}
+.featureContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  /* flex: 1; */
+}
+.featureContent span {
+  color: var(--satin-sheen-gold);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.featureContent h4 {
+  font-size: 3.5em;
+  color: var(--white);
+}
+.featureContent p {
+  color: var(--light-gray);
+}
+.featureIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.featureIcons ion-icon {
+  color: var(--satin-sheen-gold);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.featureIcons span {
+  color: var(--white);
+}
+/* Feature Section Css End */
+
+/* Offer Section Css Start */
+.offer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  background-color: var(--Green-1);
+  padding: 4rem;
+  gap: 1rem;
+}
+.offer > * {
+  flex: 1;
+}
+.offerCard1 {
+  background-image: url(../images/feature-card-bg-2.png),
+    url(../images/feature-card-bg-1.png);
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto, contain;
+  background-position: bottom left, bottom;
+  background-color: var(--satin-sheen-gold);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.cardBtn:hover {
+  background-color: var(--Green-1);
+  color: var(--white);
+}
+.offerCard1 span {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+.offerCard1 h6 {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 2.5rem;
+  transition: 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+.offerCard1 h6:hover {
+  color: var(--Green-1);
+}
+.offerCard1 p {
+  color: var(--white);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+.offerCard2,
+.offerCard3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.image h6 {
+  position: absolute;
+  bottom: 4rem;
+  left: 1rem;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+.image ion-icon {
+  position: absolute;
+  top: 3rem;
+  right: 4rem;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 50%;
+}
+/* Offer Section Css End */
+
+/* Flight Section Css Start */
+.flight {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+.flightContent {
+  flex: 1;
+  padding: 4rem 4rem;
+  background-color: var(--satin-sheen-gold);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+.flightContent span {
+  color: var(--white);
+  font-weight: bold;
+}
+.flightContent h4 {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 3rem;
+}
+.flightContent p {
+  color: var(--white);
+  line-height: 2rem;
+}
+.flightBtn {
+  background-color: var(--Green-1);
+}
+.flightImage {
+  flex: 1;
+}
+.flightImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Flight Section Css End */
+
+/* Booking Section Css Start */
+.booking {
+  display: flex;
+  align-items: center;
+  padding: 3rem 4rem;
+  background-color: var(--Green-1);
+  gap: 1rem;
+}
+.booking > * {
+  flex: 1;
+}
+.bookingContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.bookingContent span {
+  color: var(--satin-sheen-gold);
+  font-weight: bold;
+}
+.bookingContent h5 {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 3rem;
+}
+.bookingContent p {
+  color: var(--white);
+  line-height: 1.8rem;
+}
+.bookingCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  align-items: center;
+  border: 1px solid var(--Green-3);
+  transition: 0.5s ease;
+  cursor: pointer;
+  background-color: var(--british-racing-green);
+}
+.bookingCard:hover {
+  border: 1px solid var(--satin-sheen-gold);
+}
+.bookingCard:hover h6 {
+  background-color: var(--satin-sheen-gold);
+  border-bottom: 1px solid var(--satin-sheen-gold);
+}
+.bookingCard h6 {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 0;
+  background-color: var(--Green-3);
+  width: 100%;
+  border-bottom: 1px solid var(--Green-3);
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--white);
+  transition: 0.5s ease;
+}
+.bookingCard img {
+  padding: 1rem 0;
+}
+.bookingCard b {
+  color: var(--white);
+}
+.bookingCard p {
+  padding: 0.2rem 0;
+  color: var(--morning-blue);
+}
+
+/* Booking Section Css End */
+
+/* newsletter section start */
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+  background-color: var(--satin-sheen-gold);
+}
+.newsletterContent span {
+  font-weight: bold;
+  color: var(--medium-champagne);
+  padding-bottom: 0.5rem;
+}
+.newsletterContent h6 {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 3rem;
+}
+.newsletterInput {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.newsletterInput input {
+  padding: 1rem 7rem;
+  border: none;
+  text-align: left;
+  outline: none;
+  border-radius: 20px;
+}
+.newsletterInput button {
+  position: absolute;
+  right: 0.2rem;
+}
+
+/* newsletter section End */
+
+/*  
+<!-- Footer Section Start -->
+*/
+.footer {
+  background-color: var(--Green-1);
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  padding: 2rem 4rem;
+  color: var(--white);
+}
+ul li {
+  padding: 0.5rem 0;
+  font-weight: 100;
+}
+ul li p {
+  font-weight: bold;
+}
+ul li ion-icon {
+  color: var(--satin-sheen-gold);
+}
+.line {
+  color: var(--satin-sheen-gold);
+  height: 0.5px;
+}
+footer {
+  background-color: var(--Green-1);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+}
+footer span {
+  color: var(--satin-sheen-gold);
+  font-weight: bold;
+}
+footer div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+/*  
+<!-- Footer Section End -->
+*/
+/* bottom to top css start */
+.bottomToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 10rem;
+  font-size: 1.2rem;
+  background-color: var(--satin-sheen-gold);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 100%;
+}
+.bottomToTop a {
+  text-decoration: none;
+  color: var(--Green-1);
+}
+/* bottom to top css end */
+
+/* media queries */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .navLinks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    background-color: #0d2b19;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    padding: 0 2rem;
+    transition: 0.5s ease;
+  }
+  .navLinks li a {
+    font-size: 1.5rem;
+  }
+  .active .navLinks {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .mobileIcons {
+    display: block;
+  }
+  .active .mobileIcons .menuClose {
+    display: block;
+  }
+  .active .mobileIcons .menu {
+    display: none;
+  }
+  .icons {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .featureContent {
+    gap: 0.5rem;
+  }
+  .featureContent h4 {
+    font-size: 2em;
+  }
+  .offer {
+    flex-direction: column;
+    padding: 2rem 2rem;
+  }
+  .image img {
+    width: 100%;
+  }
+  .flight {
+    flex-direction: column;
+  }
+  .flightContent,
+  .flightImage {
+    width: 100%;
+  }
+  .booking {
+    flex-direction: column;
+  }
+  .bookingContent {
+    gap: 1rem;
+  }
+  .newsletter {
+    flex-direction: column;
+  }
+}
+@media (max-width: 992px) {
+  .feature {
+    flex-direction: column;
+    padding: 4rem 2rem;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  footer {
+    padding: 1rem 1rem;
+  }
+}
+@media (max-width: 685px) {
+  .heroImage img {
+    bottom: 55%;
+  }
+  .heroContent h1 {
+    font-size: 4rem;
+  }
+  .heroButtons {
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+  .featureImage img {
+    width: 100%;
+  }
+  .flightContent {
+    padding: 4rem 2rem;
+  }
+  .newsletterContent h6 {
+    font-size: 2rem;
+  }
+  .newsletterInput input {
+    padding: 1rem 4rem;
+  }
+}
